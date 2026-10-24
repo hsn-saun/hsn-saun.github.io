@@ -1,0 +1,399 @@
+/* Hong-Son Nguyen — academic homepage
+   Single column, no build step. Light by default; the toggle in the top-right
+   switches to dark and the choice is remembered per browser. */
+
+:root {
+  color-scheme: light;
+
+  --bg:        #fcfcfb;
+  --text:      #1c1e21;
+  --muted:     #62676e;
+  --rule:      #e0e1e0;
+  --link:      #1f4e6b;
+  --link-hover:#0f3550;
+  --underline: rgba(31, 78, 107, 0.28);
+  --mark:      #f4f4f1;
+  --btn-hover: #f1f1ee;
+
+  --serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --sans:  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg:        #16181a;
+  --text:      #dfe1e3;
+  --muted:     #9aa1a8;
+  --rule:      #2c2f33;
+  --link:      #82b4d4;
+  --link-hover:#a9cee5;
+  --underline: rgba(130, 180, 212, 0.30);
+  --mark:      #22262a;
+  --btn-hover: #24282c;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.62;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 10;
+  background: var(--bg);
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--rule);
+}
+
+.page {
+  max-width: 43rem;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 4rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px solid var(--underline);
+}
+a:hover { color: var(--link-hover); border-bottom-color: currentColor; }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; border-bottom-color: transparent; }
+
+/* ---------- theme toggle ---------- */
+
+/* ---------- top bar: site nav + theme toggle ---------- */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.4rem;
+  font-family: var(--sans);
+  font-size: 0.86rem;
+}
+
+.site-nav a {
+  border-bottom: none;
+  color: var(--muted);
+}
+.site-nav a:hover { color: var(--text); }
+.site-nav a[aria-current="page"] {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.theme-toggle {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  background: none;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  color: var(--muted);
+  cursor: pointer;
+}
+.theme-toggle:hover { background: var(--btn-hover); color: var(--text); }
+.theme-toggle:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+.theme-toggle svg { width: 1rem; height: 1rem; display: block; }
+
+/* show the icon for the theme you would switch *to* */
+.theme-toggle .to-dark  { display: block; }
+.theme-toggle .to-light { display: none; }
+:root[data-theme="dark"] .theme-toggle .to-dark  { display: none; }
+:root[data-theme="dark"] .theme-toggle .to-light { display: block; }
+
+/* ---------- header ---------- */
+
+.intro {
+  display: flex;
+  gap: 1.75rem;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+}
+
+.portrait {
+  margin: 0;
+  flex: 0 0 9.5rem;
+}
+
+.portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--mark);
+  border: 1px solid var(--rule);
+}
+
+h1 {
+  font-size: 1.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: -0.2rem 0 0.5rem;
+}
+
+.affil {
+  margin: 0 0 0.9rem;
+  color: var(--muted);
+  font-size: 0.97rem;
+  line-height: 1.55;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0;
+  padding: 0;
+  font-family: var(--sans);
+  font-size: 0.86rem;
+}
+
+@media (max-width: 34rem) {
+  .intro { flex-direction: column; gap: 1.25rem; }
+  .portrait { flex: none; width: 8.5rem; }
+  h1 { margin-top: 0; }
+}
+
+/* ---------- CV chooser ---------- */
+
+.cv-menu { position: relative; }
+
+.cv-menu > button {
+  font: inherit;
+  color: var(--link);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--underline);
+  padding: 0;
+  cursor: pointer;
+}
+.cv-menu > button::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.35em;
+  border: 0.28em solid transparent;
+  border-top-color: currentColor;
+  transform: translateY(0.15em);
+}
+.cv-menu > button:hover { color: var(--link-hover); border-bottom-color: currentColor; }
+.cv-menu > button[aria-expanded="true"]::after { transform: translateY(-0.15em) rotate(180deg); }
+.cv-menu > button:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+
+.cv-menu ul {
+  /* CV is the last link in the row, so the menu hangs from its right edge and
+     opens leftwards — anchoring left would push it past the viewport. */
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  z-index: 5;
+  min-width: 15rem;
+  margin: 0;
+  padding: 0.3rem;
+  list-style: none;
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.09);
+}
+
+.cv-menu ul a {
+  display: block;
+  padding: 0.45rem 0.6rem;
+  border-bottom: none;
+  border-radius: 2px;
+  color: var(--text);
+  line-height: 1.35;
+}
+.cv-menu ul a:hover { background: var(--btn-hover); color: var(--text); }
+.cv-menu ul a span {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+
+
+/* ---------- sections ---------- */
+
+main section { margin-bottom: 2.5rem; }
+
+h2 {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+p { margin: 0 0 0.9rem; }
+p:last-child { margin-bottom: 0; }
+
+.bio { margin-bottom: 2.75rem; }
+
+.note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+}
+
+.interests {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+.interests li { margin-bottom: 0.25rem; }
+
+/* ---------- news / cv lists ---------- */
+
+.news, .cvlist {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0.15rem 1.25rem;
+}
+
+.news dt, .cvlist dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--muted);
+  padding-top: 0.28rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.news dd, .cvlist dd { margin: 0 0 0.85rem; }
+
+.cvlist dd { margin-bottom: 1.1rem; }
+
+@media (max-width: 34rem) {
+  .news, .cvlist { grid-template-columns: 1fr; gap: 0; }
+  .news dt, .cvlist dt { padding-top: 0.6rem; }
+  .news dd, .cvlist dd { margin-bottom: 0.5rem; }
+}
+
+/* ---------- publications ---------- */
+
+.pubs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pubs li {
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--rule);
+}
+.pubs li:first-child { border-top: none; padding-top: 0; }
+
+/* Entries with an extracted figure put it in a fixed left column; entries
+   without one simply run full width, so a missing figure costs nothing. */
+.pubs li.has-fig {
+  display: grid;
+  grid-template-columns: 13rem 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.pub-fig {
+  margin: 0;
+  padding: 0.5rem;
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+}
+
+.pub-fig a {
+  display: block;
+  border-bottom: none;
+}
+.pub-fig a:hover { opacity: 0.82; }
+.pub-fig a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
+
+.pub-fig img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 34rem) {
+  .pubs li.has-fig { grid-template-columns: 1fr; gap: 0.85rem; }
+  .pub-fig { max-width: 20rem; }
+}
+
+.pubs .title {
+  margin: 0 0 0.2rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.pubs .authors {
+  margin: 0 0 0.15rem;
+  font-size: 0.95rem;
+}
+
+.pubs .venue {
+  margin: 0 0 0.4rem;
+  font-size: 0.93rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.pubs .meta {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* ---------- footer ---------- */
+
+footer {
+  margin-top: 3.5rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+@media print {
+  :root { color-scheme: light; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .page { max-width: none; padding: 0; }
+  a { color: #000; border-bottom: none; }
+  .skip, .portrait, .theme-toggle { display: none; }
+}

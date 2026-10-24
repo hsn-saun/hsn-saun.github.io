@@ -1,0 +1,4 @@
+# LaTeX build artefacts
+cv/*.aux
+cv/*.log
+cv/*.out

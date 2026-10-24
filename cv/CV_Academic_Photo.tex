@@ -1,0 +1,145 @@
+% Academic CV, photo variant — identical content to CV_Academic.tex, with a
+% portrait added in the header's empty top-right corner.
+% Build: xelatex CV_Academic_Photo.tex
+\documentclass[10pt]{article}
+\usepackage{cvstyle}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\begin{document}
+
+% ============================================================ header
+% Portrait is an absolutely-positioned overlay in the top-right corner, so it
+% adds no vertical space to the flow and cannot disturb later list indentation
+% (unlike wrapfig, which was found to break the achievements lists below).
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor=north east, inner sep=0pt] at ([xshift=-18mm,yshift=-18mm]current page.north east)
+    {\fcolorbox{rule}{white}{\includegraphics[width=2.6cm,height=2.6cm,keepaspectratio]{../assets/portrait.jpg}}};
+\end{tikzpicture}%
+\begin{minipage}[t]{0.76\textwidth}
+{\fontsize{22}{26}\selectfont\bfseries Hong-Son Nguyen}\\[2pt]
+{\color{muted}\fontsize{10.5}{13}\selectfont Nguyễn Hồng Sơn}\\[7pt]
+{\fontsize{10}{14}\selectfont
+Research Fellow, Networked Robotic Systems Laboratory\\
+Department of Mechanical Engineering, National Cheng Kung University, Tainan, Taiwan}\\[8pt]
+{\fontsize{9.4}{14}\selectfont
+\ilink{\faEnvelope}{hongsonnguyen.haui@gmail.com}{mailto:hongsonnguyen.haui@gmail.com} \quad
+\itext{\faPhone*}{+84 866 401 750} \quad
+\itext{\faMapMarker*}{Tainan, Taiwan}\\[2pt]
+\ilink{\faGlobe}{sontypo.github.io}{https://sontypo.github.io} \quad
+\ilink{\aiGoogleScholar}{Google Scholar}{https://scholar.google.com/citations?user=FENrtWsAAAAJ} \quad
+\ilink{\faGithub}{sontypo}{https://github.com/sontypo} \quad
+\ilink{\faLinkedin}{hong-son-nguyen}{https://www.linkedin.com/in/hong-son-nguyen-751tps/}}
+\end{minipage}
+
+% ============================================================ statement
+\section{Research interests}
+{\fontsize{9.8}{12.6}\selectfont
+Human-aware and social robot navigation; multi-agent pedestrian trajectory
+prediction; reinforcement learning for planning and control; human--robot
+interaction and pedestrian comfort. I am interested in representations that
+encode human state, social interaction structure and group behaviour, and in
+validating them on physical robots rather than in simulation alone.}
+
+% ============================================================ education
+\section{Education}
+
+\entry{2024 -- present}{M.S. in Robotics and Control Systems}{Department of Mechanical Engineering, National Cheng Kung University, Tainan, Taiwan}
+\begin{detail}
+Advisor: Prof.\ Yen-Chen Liu. \quad GPA 3.52/4.0 (87.89/100).
+\end{detail}
+
+\entry{2019 -- 2023}{B.S. in Mechatronic Engineering}{Hanoi University of Industry, Hanoi, Vietnam}
+\begin{detail}
+Advisor: Assoc.\ Prof.\ Anh-Tu Nguyen. \quad GPA 3.05/4.0.\\
+Thesis: \emph{Development of an Autonomous Hexapod Robot using Deep
+Reinforcement Learning Methods.} Graded 94 and selected as best thesis.
+\end{detail}
+
+% ============================================================ experience
+\section{Research experience}
+
+\entry{Feb 2024 -- present}{Research Fellow}{Networked Robotic Systems Laboratory, National Cheng Kung University}
+\begin{achievements}
+  \item Built an end-to-end human-aware navigation pipeline covering sensing,
+        human-state representation, prediction, planning, learning and control,
+        validated on an Agilex Scout Mini with ZED-X stereo vision, Velodyne
+        VLP-16 LiDAR and Jetson AGX Orin compute.
+  \item Developed Social Graph Mamba, an attention-free trajectory forecasting
+        model using selective state space models over dynamic interaction graphs,
+        reaching linear rather than quadratic complexity in the number of agents.
+  \item Ran pedestrian studies with human participants, including comfort surveys
+        and their statistical analysis, feeding empirical comfort models back into
+        the navigation stack.
+\end{achievements}
+
+\entry{2022 -- Jan 2024}{Research Assistant and Team Leader}{Hanoi Intelligent Robotics Laboratory, Hanoi University of Industry}
+\begin{achievements}
+  \item Led a student research team on reinforcement learning for autonomous
+        mobile robots, producing the group's first published navigation work.
+  \item Implemented and benchmarked Q-Learning and SARSA navigation policies in
+        Gazebo, with experimental validation on physical platforms.
+\end{achievements}
+
+% ============================================================ publications
+\section{Publications}
+
+\pub{\me, Yen-Chen Liu}
+    {Social Graph Mamba: Forecasting Pedestrian Movements Based on Social Context}
+    {arXiv preprint arXiv:2608.21411, 2026}
+    {\plink{arXiv}{https://arxiv.org/abs/2608.21411}}
+
+\pub{Alireza Jafari, \me, Yen-Chen Liu}
+    {Stability and Comfort in Mobile Robot--Pedestrian Interactions}
+    {arXiv preprint arXiv:2607.17604, 2026}
+    {\plink{arXiv}{https://arxiv.org/abs/2607.17604}}
+
+\pub{Alireza Jafari, \me, Yen-Chen Liu}
+    {Empirical Prediction of Pedestrian Comfort in Mobile Robot--Pedestrian Encounters}
+    {IEEE International Conference on Robotics and Automation (ICRA), 2026}
+    {\plink{arXiv}{https://arxiv.org/abs/2604.13677}}
+
+\pub{\me, Alireza Jafari, Yen-Chen Liu}
+    {RL Optimization for Social Force Model in Human-Aware Navigation}
+    {International Automatic Control Conference (CACS), 2025}
+    {}
+
+\pub{\me, Anh-Tu Nguyen}
+    {Combination of Deep Reinforcement Learning and Pure-Pursuit Algorithm for Adaptive Autonomous Mobile Robot Navigation}
+    {International Conference on Intelligent Systems and Networks (ICISN), Lecture Notes in Networks and Systems, vol.~1077, pp.~563--572, Springer, 2024}
+    {\plink{Springer}{https://link.springer.com/chapter/10.1007/978-981-97-5504-2_66}}
+
+\pub{Anh-Tu Nguyen, \me}
+    {The Application of the Reinforcement Learning Method for Mobile Robot Navigation in an Unknown Environment}
+    {International Conference on Material, Machines and Methods for Sustainable Development (MMMS), Lecture Notes in Mechanical Engineering, pp.~201--207, Springer, 2024}
+    {\plink{Springer}{https://link.springer.com/chapter/10.1007/978-3-031-57460-3_22}}
+
+\pub{Anh-Tu Nguyen, \me, Huy-Anh Bui, Quoc-Hoan Tran}
+    {Navigation for Mobile Robot in Unknown Environment using Reinforcement Learning Methods}
+    {Journal of Science and Technology, Hanoi University of Industry, vol.~59, no.~2B, 2023}
+    {\plink{Journal}{https://vjol.info.vn/index.php/dhcnhn/article/view/82751}}
+
+% ============================================================ skills
+\section{Technical skills}
+
+\skillrow{Languages}{Python, \cpp}
+\skillrow{Learning}{PyTorch, deep reinforcement learning (PPO, RSL-RL), graph neural networks, selective state space models}
+\skillrow{Robotics}{ROS~2, Nav2, NVIDIA Isaac Sim / IsaacLab, Gazebo}
+\skillrow{Perception}{3D LiDAR (Velodyne VLP-16), stereo vision (ZED-X), pedestrian tracking}
+\skillrow{Platforms}{Agilex Scout Mini, Jetson AGX Orin}
+
+% ============================================================ awards
+\section{Awards and service}
+
+\entry{2024 -- 2026}{Distinguished International Student Scholarship}{National Cheng Kung University}
+\entry{2023}{Scholarship for excellent students}{Department of Mechanical Engineering, Hanoi University of Industry}
+\entry{2022}{First prize, Students Scientific Research Competition}{Hanoi University of Industry}
+\entry{Since 2022}{Student Member}{American Society of Mechanical Engineers (ASME)}
+
+% ============================================================ languages
+\section{Languages}
+
+\skillrow{Vietnamese}{Native}
+\skillrow{English}{IELTS 6.0}
+
+\end{document}

@@ -1,0 +1,103 @@
+% Industry CV — one page, for robotics / perception / ML engineering roles.
+% Build: xelatex CV_Industry.tex
+\documentclass[10pt]{article}
+\usepackage{cvstyle}
+
+\begin{document}
+
+% ============================================================ header
+{\fontsize{22}{26}\selectfont\bfseries Hong-Son Nguyen}\\[3pt]
+{\fontsize{10.5}{13}\selectfont\color{muted} Robotics Engineer — autonomous navigation, perception, reinforcement learning}\\[8pt]
+{\fontsize{9.4}{14}\selectfont
+\ilink{\faEnvelope}{hongsonnguyen.haui@gmail.com}{mailto:hongsonnguyen.haui@gmail.com} \quad
+\itext{\faPhone*}{+84 866 401 750} \quad
+\itext{\faMapMarker*}{Tainan, Taiwan}\\[2pt]
+\ilink{\faGlobe}{sontypo.github.io}{https://sontypo.github.io} \quad
+\ilink{\faGithub}{sontypo}{https://github.com/sontypo} \quad
+\ilink{\faLinkedin}{hong-son-nguyen}{https://www.linkedin.com/in/hong-son-nguyen-751tps/} \quad
+\ilink{\aiGoogleScholar}{Google Scholar}{https://scholar.google.com/citations?user=FENrtWsAAAAJ}}
+
+% ============================================================ summary
+\section{Profile}
+{\fontsize{9.7}{12.4}\selectfont
+Robotics researcher who ships complete autonomy stacks, not just models. Three
+years building navigation systems that run on real hardware — perception,
+prediction, planning, learning and control — for mobile robots operating around
+people. Seven publications including IEEE ICRA 2026.}
+
+% ============================================================ skills first
+\section{Technical skills}
+
+\skillrow{Languages}{Python, \cpp}
+\skillrow{ML}{PyTorch, deep reinforcement learning (PPO, RSL-RL), graph neural networks, selective state space models (Mamba)}
+\skillrow{Robotics}{ROS~2, Nav2, NVIDIA Isaac Sim / IsaacLab, Gazebo, motion planning, Social Force Model}
+\skillrow{Perception}{3D LiDAR (Velodyne VLP-16), stereo vision (ZED-X), pedestrian detection and tracking}
+\skillrow{Hardware}{Agilex Scout Mini, Jetson AGX Orin, edge deployment}
+
+% ============================================================ experience
+\section{Experience}
+
+\entry{Feb 2024 -- present}{Research Fellow — Robotics}{Networked Robotic Systems Laboratory, National Cheng Kung University, Taiwan}
+\begin{achievements}
+  \item Own an end-to-end human-aware navigation stack running on an Agilex
+        Scout Mini: LiDAR and stereo perception, pedestrian tracking, trajectory
+        prediction, planning and control, deployed on Jetson AGX Orin.
+  \item Designed Social Graph Mamba, a trajectory forecasting model that replaces
+        quadratic attention with selective state space models over dynamic
+        interaction graphs, giving linear scaling in the number of tracked people
+        while matching benchmark accuracy on ETH/UCY and SDD.
+  \item Built large-scale RL training environments in Isaac Sim / IsaacLab with
+        configurable crowds, obstacles and curricula, and trained navigation
+        policies with PPO via RSL-RL.
+  \item Designed and ran human-subject experiments with real pedestrians,
+        turning comfort surveys and their statistical analysis into an empirical
+        model used by the planner. Four papers in two years, one at IEEE ICRA 2026.
+\end{achievements}
+
+\entry{2022 -- Jan 2024}{Research Assistant, Team Leader}{Hanoi Intelligent Robotics Laboratory, Hanoi University of Industry, Vietnam}
+\begin{achievements}
+  \item Led a student research team on reinforcement learning for autonomous
+        mobile robots, coordinating the work that produced the group's first
+        published navigation papers.
+  \item Implemented and benchmarked Q-Learning, SARSA and a deep RL / Pure-Pursuit
+        hybrid controller in Gazebo, with validation on physical robots.
+\end{achievements}
+
+% ============================================================ projects
+\section{Selected projects}
+
+\entry{2026}{Social Graph Mamba}{Attention-free multi-agent trajectory prediction \ \plink{arXiv}{https://arxiv.org/abs/2608.21411}}
+\begin{detail}
+Selective state space models over dynamically built interaction graphs, with a
+community-aware module using differentiable MinCut to recover pedestrian groups.
+Linear sequence complexity instead of the quadratic cost of attention, evaluated
+on ETH/UCY and SDD and deployed on a physical robot.
+\end{detail}
+
+\entry{2025}{RL Social Navigation}{Large-scale training environment in NVIDIA IsaacLab}
+\begin{detail}
+Configurable crowds, obstacles, curricula and goal distributions for learning
+socially aware navigation policies, trained with PPO through RSL-RL and
+transferred to the Scout Mini platform.
+\end{detail}
+
+\entry{2023}{Autonomous Hexapod Robot}{Undergraduate thesis — graded 94, selected as best thesis}
+\begin{detail}
+Deep reinforcement learning for locomotion and outdoor autonomy on an 18-DOF
+hexapod, from simulation training through to hardware deployment.
+\end{detail}
+
+% ============================================================ education
+\section{Education}
+
+\entry{2024 -- present}{M.S. in Robotics and Control Systems}{National Cheng Kung University, Taiwan — GPA 3.52/4.0}
+\entry{2019 -- 2023}{B.S. in Mechatronic Engineering}{Hanoi University of Industry, Vietnam — GPA 3.05/4.0}
+
+% ============================================================ extras
+\section{Publications, awards and languages}
+
+\skillrow{Publications}{Seven papers on robot navigation and pedestrian prediction, including IEEE ICRA 2026 and two Springer volumes — \href{https://scholar.google.com/citations?user=FENrtWsAAAAJ}{Google Scholar}.}
+\skillrow{Awards}{Distinguished International Student Scholarship, National Cheng Kung University (2024--2026); first prize, Students Scientific Research Competition, Hanoi University of Industry (2022); departmental scholarship (2023); ASME student member since 2022.}
+\skillrow{Languages}{Vietnamese (native); English — IELTS 6.0}
+
+\end{document}

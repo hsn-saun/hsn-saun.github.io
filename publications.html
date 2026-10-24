@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publications — Hong-Son Nguyen</title>
+<meta name="description" content="Publications by Hong-Son Nguyen on human-aware mobile robot navigation, pedestrian trajectory prediction, and reinforcement learning.">
+<meta name="author" content="Hong-Son Nguyen">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Publications — Hong-Son Nguyen">
+<meta property="og:description" content="Human-aware mobile robot navigation, pedestrian trajectory prediction, and reinforcement learning. Networked Robotic Systems Lab, NCKU.">
+
+<link rel="stylesheet" href="style.css">
+
+<script>
+  /* Applied before first paint so a remembered dark choice does not flash light. */
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="page">
+
+  <div class="topbar">
+    <nav class="site-nav" aria-label="Site sections">
+      <a href="index.html">Home</a>
+      <a href="publications.html" aria-current="page">Publications</a>
+    </nav>
+    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch to dark theme">
+      <svg class="to-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/>
+      </svg>
+      <svg class="to-light" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2"/>
+        <path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>
+      </svg>
+    </button>
+  </div>
+
+  <header class="intro">
+    <figure class="portrait">
+      <img src="assets/portrait.jpg" alt="Hong-Son Nguyen"
+           onerror="this.src='assets/portrait-placeholder.svg'; this.alt='Portrait placeholder';">
+    </figure>
+
+    <div class="intro-body">
+      <h1>Hong-Son Nguyen</h1>
+      <p class="affil">
+        Research Fellow, <a href="https://sites.google.com/site/yenchenliuncku/">Networked Robotic Systems Laboratory</a><br>
+        MSc candidate, Robotics and Control Systems &middot; Department of Mechanical Engineering<br>
+        National Cheng Kung University, Tainan, Taiwan
+      </p>
+
+      <ul class="links">
+        <li><a href="mailto:hongsonnguyen.haui@gmail.com">Email</a></li>
+        <li><a href="https://scholar.google.com/citations?user=FENrtWsAAAAJ&amp;hl=en">Google Scholar</a></li>
+        <li><a href="https://github.com/sontypo">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/hong-son-nguyen-751tps/">LinkedIn</a></li>
+        <li class="cv-menu">
+          <button type="button" id="cvButton" aria-expanded="false" aria-controls="cvChoices">CV</button>
+          <ul id="cvChoices" hidden>
+            <li><a href="assets/HongSon_Nguyen_CV_Academic.pdf">Academic CV<span>2 pages &middot; full publication list</span></a></li>
+            <li><a href="assets/HongSon_Nguyen_CV_Industry.pdf">Industry CV<span>2 pages &middot; engineering roles</span></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section>
+      <h2>Publications</h2>
+      <p class="note">
+        Author order follows each publication. See
+        <a href="https://scholar.google.com/citations?user=FENrtWsAAAAJ&amp;hl=en">Google Scholar</a>
+        for citation counts and the complete record.
+      </p>
+
+      <ol class="pubs">
+
+        <li class="has-fig">
+          <figure class="pub-fig">
+            <a href="assets/figures/social-graph-mamba.png" title="Open the full-size figure">
+            <img src="assets/figures/social-graph-mamba.png" alt="Pipeline diagram: a dynamic interaction graph and community-aware encoder feed a social triplet of Cycle Mamba blocks, whose outputs are combined by a social gate and global scan before a multimodal trajectory decoder."
+                 loading="lazy" decoding="async">
+            </a>
+          </figure>
+          <div class="pub-body">
+            <p class="title">Social Graph Mamba: Forecasting Pedestrian Movements Based on Social Context</p>
+            <p class="authors"><strong>Hong-Son Nguyen</strong>, Yen-Chen Liu</p>
+            <p class="venue">arXiv preprint arXiv:2608.21411, 2026</p>
+            <p class="meta">
+              <a href="https://arxiv.org/abs/2608.21411">arXiv</a>
+            </p>
+          </div>
+        </li>
+
+        <li class="has-fig">
+          <figure class="pub-fig">
+            <a href="assets/figures/stability-comfort.png" title="Open the full-size figure">
+            <img src="assets/figures/stability-comfort.png" alt="Diagram of the projected time-to-collision between a nonholonomic mobile robot and two pedestrians passing in a corridor, with the relative velocity decomposed along and across the line of approach."
+                 loading="lazy" decoding="async">
+            </a>
+          </figure>
+          <div class="pub-body">
+            <p class="title">Stability and Comfort in Mobile Robot–Pedestrian Interactions</p>
+            <p class="authors">Alireza Jafari, <strong>Hong-Son Nguyen</strong>, Yen-Chen Liu</p>
+            <p class="venue">arXiv preprint arXiv:2607.17604, 2026</p>
+            <p class="meta">
+              <a href="https://arxiv.org/abs/2607.17604">arXiv</a>
+            </p>
+          </div>
+        </li>
+
+        <li class="has-fig">
+          <figure class="pub-fig">
+            <a href="assets/figures/pedestrian-comfort.png" title="Open the full-size figure">
+            <img src="assets/figures/pedestrian-comfort.png" alt="Four panels defining the spatial kinematic variables: minimum distance, lateral distance, path curvature, and the distance at the passing moment."
+                 loading="lazy" decoding="async">
+            </a>
+          </figure>
+          <div class="pub-body">
+            <p class="title">Empirical Prediction of Pedestrian Comfort in Mobile Robot–Pedestrian Encounters</p>
+            <p class="authors">Alireza Jafari, <strong>Hong-Son Nguyen</strong>, Yen-Chen Liu</p>
+            <p class="venue">IEEE International Conference on Robotics and Automation (ICRA), 2026</p>
+            <p class="meta">
+              <a href="https://arxiv.org/abs/2604.13677">arXiv</a>
+            </p>
+          </div>
+        </li>
+
+        <li class="has-fig">
+          <figure class="pub-fig">
+            <a href="assets/figures/rl-social-force.jpg" title="Open the full-size figure">
+            <img src="assets/figures/rl-social-force.jpg" alt="The Agilex Scout Mini platform with its Zed X camera, 2D and 3D LiDAR and Jetson AGX Orin, beside the reinforcement learning loop that tunes Social Force Model parameters from human states and laser scans."
+                 loading="lazy" decoding="async">
+            </a>
+          </figure>
+          <div class="pub-body">
+            <p class="title">RL Optimization for Social Force Model in Human-Aware Navigation</p>
+            <p class="authors"><strong>Hong-Son Nguyen</strong>, Alireza Jafari, Yen-Chen Liu</p>
+            <p class="venue">International Automatic Control Conference (CACS), 2025</p>
+            <p class="meta">
+              <a href="https://sites.google.com/site/yenchenliuncku/pub">Lab listing</a>
+            </p>
+          </div>
+        </li>
+
+        <li class="has-fig">
+          <figure class="pub-fig">
+            <a href="assets/figures/pure-pursuit-drl.png" title="Open the full-size figure">
+            <img src="assets/figures/pure-pursuit-drl.png" alt="Control block diagram: an obstacle check switches between the Pure-Pursuit algorithm and the deep reinforcement learning policy, whose outputs drive the robot kinematic model."
+                 loading="lazy" decoding="async">
+            </a>
+          </figure>
+          <div class="pub-body">
+            <p class="title">Combination of Deep Reinforcement Learning and Pure-Pursuit Algorithm for
+               Adaptive Autonomous Mobile Robot Navigation</p>
+            <p class="authors"><strong>Hong-Son Nguyen</strong>, Anh-Tu Nguyen</p>
+            <p class="venue">International Conference on Intelligent Systems and Networks (ICISN),
+               Lecture Notes in Networks and Systems, vol. 1077, pp. 563–572, Springer, 2024</p>
+            <p class="meta">
+              <a href="https://link.springer.com/chapter/10.1007/978-981-97-5504-2_66">Springer</a>
+            </p>
+          </div>
+        </li>
+
+        <li class="has-fig">
+          <figure class="pub-fig">
+            <a href="assets/figures/rl-unknown-environment.jpg" title="Open the full-size figure">
+            <img src="assets/figures/rl-unknown-environment.jpg" alt="An experiment photograph beside a plot comparing the robot trajectory in simulation and in the real environment through the same obstacle layout."
+                 loading="lazy" decoding="async">
+            </a>
+          </figure>
+          <div class="pub-body">
+            <p class="title">The Application of the Reinforcement Learning Method for Mobile Robot
+               Navigation in an Unknown Environment</p>
+            <p class="authors">Anh-Tu Nguyen, <strong>Hong-Son Nguyen</strong></p>
+            <p class="venue">International Conference on Material, Machines and Methods for Sustainable
+               Development (MMMS), Lecture Notes in Mechanical Engineering, pp. 201–207, Springer, 2024</p>
+            <p class="meta">
+              <a href="https://link.springer.com/chapter/10.1007/978-3-031-57460-3_22">Springer</a>
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <div class="pub-body">
+            <p class="title">Navigation for Mobile Robot in Unknown Environment using Reinforcement
+               Learning Methods</p>
+            <p class="authors">Anh-Tu Nguyen, <strong>Hong-Son Nguyen</strong>, Huy-Anh Bui, Quoc-Hoan Tran</p>
+            <p class="venue">Journal of Science and Technology, Hanoi University of Industry,
+               vol. 59, no. 2B, 2023</p>
+            <p class="meta">
+              <a href="https://vjol.info.vn/index.php/dhcnhn/article/view/82751">Journal</a>
+            </p>
+          </div>
+        </li>
+
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Last updated September 2026.
+      Source at <a href="https://github.com/sontypo">github.com/sontypo</a>.
+    </p>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('themeToggle');
+
+    function setTheme(mode) {
+      if (mode === 'dark') root.setAttribute('data-theme', 'dark');
+      else root.removeAttribute('data-theme');
+      btn.setAttribute('aria-label',
+        mode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+      try { localStorage.setItem('theme', mode); } catch (e) {}
+    }
+
+    /* Sync the label with whatever the pre-paint script already applied. */
+    btn.setAttribute('aria-label',
+      root.getAttribute('data-theme') === 'dark'
+        ? 'Switch to light theme' : 'Switch to dark theme');
+
+    btn.addEventListener('click', function () {
+      setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+  })();
+
+  /* CV chooser. Without JavaScript the menu stays open, so both CVs remain reachable. */
+  (function () {
+    var button = document.getElementById('cvButton');
+    var menu = document.getElementById('cvChoices');
+
+    function open(isOpen) {
+      menu.hidden = !isOpen;
+      button.setAttribute('aria-expanded', String(isOpen));
+    }
+
+    open(false);
+
+    button.addEventListener('click', function (e) {
+      e.stopPropagation();
+      open(menu.hidden);
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!menu.hidden && !menu.contains(e.target)) open(false);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !menu.hidden) {
+        open(false);
+        button.focus();
+      }
+    });
+  })();
+</script>
+
+
+</body>
+</html>
