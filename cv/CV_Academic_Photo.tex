@@ -14,19 +14,19 @@
 % (unlike wrapfig, which was found to break the achievements lists below).
 \begin{tikzpicture}[remember picture, overlay]
   \node[anchor=north east, inner sep=0pt] at ([xshift=-18mm,yshift=-18mm]current page.north east)
-    {\fcolorbox{rule}{white}{\includegraphics[width=2.6cm,height=2.6cm,keepaspectratio]{../assets/portrait.jpg}}};
+    {\fcolorbox{rule}{white}{\includegraphics[width=3.2cm,height=3.2cm,keepaspectratio]{../assets/portrait.jpg}}};
 \end{tikzpicture}%
 \begin{minipage}[t]{0.76\textwidth}
 {\fontsize{22}{26}\selectfont\bfseries Hong-Son Nguyen}\\[2pt]
 {\color{muted}\fontsize{10.5}{13}\selectfont Nguyễn Hồng Sơn}\\[7pt]
 {\fontsize{10}{14}\selectfont
 Research Fellow, Networked Robotic Systems Laboratory\\
-Department of Mechanical Engineering, National Cheng Kung University, Tainan, Taiwan}\\[8pt]
+Dept. of Mechanical Engineering, National Cheng Kung University, Tainan, Taiwan}\\[8pt]
 {\fontsize{9.4}{14}\selectfont
 \ilink{\faEnvelope}{hongsonnguyen.haui@gmail.com}{mailto:hongsonnguyen.haui@gmail.com} \quad
 \itext{\faPhone*}{+84 866 401 750} \quad
 \itext{\faMapMarker*}{Tainan, Taiwan}\\[2pt]
-\ilink{\faGlobe}{sontypo.github.io}{https://sontypo.github.io} \quad
+\ilink{\faGlobe}{hsn-saun.github.io}{https://hsn-saun.github.io} \quad
 \ilink{\aiGoogleScholar}{Google Scholar}{https://scholar.google.com/citations?user=FENrtWsAAAAJ} \quad
 \ilink{\faGithub}{sontypo}{https://github.com/sontypo} \quad
 \ilink{\faLinkedin}{hong-son-nguyen}{https://www.linkedin.com/in/hong-son-nguyen-751tps/}}
@@ -72,6 +72,15 @@ Reinforcement Learning Methods.} Graded 94 and selected as best thesis.
         and their statistical analysis, feeding empirical comfort models back into
         the navigation stack.
 \end{achievements}
+\begin{detail}
+{\fontsize{9}{11.5}\selectfont\textbf{Funded projects:} \emph{Advanced Resilient and
+Intelligent Control for Heterogeneous Cyber-Physical Mobile Robot Systems}, MOST,
+Taiwan (Mar -- Jul 2024); \emph{Designing and Implementing Generative AI Service
+Robots: Exploring Applications in Companionship and Home Services}, NSTC, Taiwan
+(Aug 2024 -- Aug 2025); \emph{Trust-Integrated Intelligent Control for Socially
+Aware Robot Navigation in Dynamic and Crowded Environments}, NSTC, Taiwan
+(Aug 2025 -- present).}
+\end{detail}
 
 \entry{2022 -- Jan 2024}{Research Assistant and Team Leader}{Hanoi Intelligent Robotics Laboratory, Hanoi University of Industry}
 \begin{achievements}
@@ -80,6 +89,11 @@ Reinforcement Learning Methods.} Graded 94 and selected as best thesis.
   \item Implemented and benchmarked Q-Learning and SARSA navigation policies in
         Gazebo, with experimental validation on physical platforms.
 \end{achievements}
+\begin{detail}
+{\fontsize{9}{11.5}\selectfont\textbf{Funded project:} \emph{Development of the
+Localization System for Mobile Robots Working in the Outdoor Environment},
+Hanoi University of Industry (HAUI), Vietnam (Dec 2022 -- Dec 2023).}
+\end{detail}
 
 % ============================================================ publications
 \section{Publications}
@@ -99,11 +113,6 @@ Reinforcement Learning Methods.} Graded 94 and selected as best thesis.
     {IEEE International Conference on Robotics and Automation (ICRA), 2026}
     {\plink{arXiv}{https://arxiv.org/abs/2604.13677}}
 
-\pub{\me, Alireza Jafari, Yen-Chen Liu}
-    {RL Optimization for Social Force Model in Human-Aware Navigation}
-    {International Automatic Control Conference (CACS), 2025}
-    {}
-
 \pub{\me, Anh-Tu Nguyen}
     {Combination of Deep Reinforcement Learning and Pure-Pursuit Algorithm for Adaptive Autonomous Mobile Robot Navigation}
     {International Conference on Intelligent Systems and Networks (ICISN), Lecture Notes in Networks and Systems, vol.~1077, pp.~563--572, Springer, 2024}
@@ -114,19 +123,14 @@ Reinforcement Learning Methods.} Graded 94 and selected as best thesis.
     {International Conference on Material, Machines and Methods for Sustainable Development (MMMS), Lecture Notes in Mechanical Engineering, pp.~201--207, Springer, 2024}
     {\plink{Springer}{https://link.springer.com/chapter/10.1007/978-3-031-57460-3_22}}
 
-\pub{Anh-Tu Nguyen, \me, Huy-Anh Bui, Quoc-Hoan Tran}
-    {Navigation for Mobile Robot in Unknown Environment using Reinforcement Learning Methods}
-    {Journal of Science and Technology, Hanoi University of Industry, vol.~59, no.~2B, 2023}
-    {\plink{Journal}{https://vjol.info.vn/index.php/dhcnhn/article/view/82751}}
 
 % ============================================================ skills
 \section{Technical skills}
 
-\skillrow{Languages}{Python, \cpp}
-\skillrow{Learning}{PyTorch, deep reinforcement learning (PPO, RSL-RL), graph neural networks, selective state space models}
-\skillrow{Robotics}{ROS~2, Nav2, NVIDIA Isaac Sim / IsaacLab, Gazebo}
-\skillrow{Perception}{3D LiDAR (Velodyne VLP-16), stereo vision (ZED-X), pedestrian tracking}
-\skillrow{Platforms}{Agilex Scout Mini, Jetson AGX Orin}
+\skillrow{Languages}{Python, \cpp, MATLAB}
+\skillrow{Machine Learning}{PyTorch, deep reinforcement learning, Attention mechanism, selective state space models, Sim2Sim and Sim2Real transfer}
+\skillrow{Libraries}{ROS~2, NVIDIA Isaac Sim / IsaacLab, Gazebo, MuJoCo, CUDA}
+\skillrow{Platforms}{Agilex Scout Mini, Unitree Go2, Jetson AGX Orin}
 
 % ============================================================ awards
 \section{Awards and service}
@@ -139,7 +143,6 @@ Reinforcement Learning Methods.} Graded 94 and selected as best thesis.
 % ============================================================ languages
 \section{Languages}
 
-\skillrow{Vietnamese}{Native}
 \skillrow{English}{IELTS 6.0}
 
 \end{document}
