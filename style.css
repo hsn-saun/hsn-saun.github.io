@@ -347,6 +347,19 @@ p:last-child { margin-bottom: 0; }
   height: auto;
 }
 
+/* Reserved slot for a figure that is not ready yet. */
+.pub-fig-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 10;
+  background: var(--mark);
+  border-style: dashed;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.8rem;
+}
+
 @media (max-width: 34rem) {
   .pubs li.has-fig { grid-template-columns: 1fr; gap: 0.85rem; }
   .pub-fig { max-width: 20rem; }
