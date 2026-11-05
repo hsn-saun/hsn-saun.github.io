@@ -286,7 +286,6 @@ p:last-child { margin-bottom: 0; }
 .pubs .title,
 .pubs .authors,
 .pubs .venue,
-.projects .title,
 .projects .venue,
 .projects .desc {
   text-align: justify;
