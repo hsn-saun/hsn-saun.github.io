@@ -276,6 +276,23 @@ p:last-child { margin-bottom: 0; }
 }
 .interests li { margin-bottom: 0.25rem; }
 
+/* Running text is justified on every page. Single lines and the last line of a
+   block stay left-aligned, and hyphenation keeps word gaps even in narrow
+   columns. Add new text blocks here so the pages stay consistent. */
+.bio p,
+.note,
+.interests li,
+.news dd,
+.pubs .title,
+.pubs .authors,
+.pubs .venue,
+.projects .title,
+.projects .venue,
+.projects .desc {
+  text-align: justify;
+  hyphens: auto;
+}
+
 /* ---------- news / cv lists ---------- */
 
 .news, .cvlist {
@@ -305,17 +322,20 @@ p:last-child { margin-bottom: 0; }
 
 /* ---------- publications ---------- */
 
-.pubs {
+.pubs,
+.projects {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.pubs li {
+.pubs li,
+.projects li {
   padding: 1.1rem 0;
   border-top: 1px solid var(--rule);
 }
-.pubs li:first-child { border-top: none; padding-top: 0; }
+.pubs li:first-child,
+.projects li:first-child { border-top: none; padding-top: 0; }
 
 /* Entries with an extracted figure put it in a fixed left column; entries
    without one simply run full width, so a missing figure costs nothing. */
@@ -365,31 +385,92 @@ p:last-child { margin-bottom: 0; }
   .pub-fig { max-width: 20rem; }
 }
 
-.pubs .title {
+.pubs .title,
+.projects .title {
   margin: 0 0 0.2rem;
   font-weight: 600;
   line-height: 1.4;
 }
 
-.pubs .authors {
+.pubs .authors,
+.projects .desc {
   margin: 0 0 0.15rem;
   font-size: 0.95rem;
 }
 
-.pubs .venue {
+.pubs .venue,
+.projects .venue {
   margin: 0 0 0.4rem;
   font-size: 0.93rem;
   color: var(--muted);
   font-style: italic;
 }
 
-.pubs .meta {
+.pubs .meta,
+.projects .meta {
   margin: 0;
   font-family: var(--sans);
   font-size: 0.82rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+}
+
+/* ---------- projects ---------- */
+
+/* Text styles are shared with the publication list above, so both pages read
+   the same. Only the layout differs: the video takes half the column, the same
+   width as the text beside it. */
+.projects li {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+/* Videos keep their own shape; most are 16:9, the thesis video is 4:3. */
+.project-video {
+  aspect-ratio: 16 / 9;
+  background: var(--mark);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.project-video--4x3 { aspect-ratio: 4 / 3; }
+
+.project-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.projects .desc { margin-bottom: 0.4rem; }
+
+/* Set by the script in projects.html, which also picks the number of lines so
+   the entry is no taller than its video. */
+.projects .desc.is-trimmed {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Styled as a link, like the CV button. */
+.desc-toggle {
+  font: inherit;
+  color: var(--link);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--underline);
+  padding: 0;
+  cursor: pointer;
+}
+.desc-toggle:hover { color: var(--link-hover); border-bottom-color: currentColor; }
+.desc-toggle:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+.desc-toggle[hidden] { display: none; }
+
+@media (max-width: 34rem) {
+  .projects li { grid-template-columns: 1fr; gap: 0.85rem; }
 }
 
 /* ---------- footer ---------- */
@@ -408,5 +489,8 @@ footer {
   body { background: #fff; color: #000; font-size: 11pt; }
   .page { max-width: none; padding: 0; }
   a { color: #000; border-bottom: none; }
-  .skip, .portrait, .theme-toggle { display: none; }
+  .skip, .portrait, .theme-toggle, .project-video { display: none; }
+  .projects li { display: block; }
+  .projects .desc.is-trimmed { display: block; }
+  .desc-toggle { display: none; }
 }

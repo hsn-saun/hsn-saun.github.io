@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — Hong-Son Nguyen</title>
+<meta name="description" content="Project videos by Hong-Son Nguyen: autonomous mobile robots and hexapod robots driven by deep reinforcement learning.">
+<meta name="author" content="Hong-Son Nguyen">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Projects — Hong-Son Nguyen">
+<meta property="og:description" content="Human-aware mobile robot navigation, pedestrian trajectory prediction, and reinforcement learning. Networked Robotic Systems Lab, NCKU.">
+
+<link rel="stylesheet" href="style.css">
+
+<script>
+  /* Applied before first paint so a remembered dark choice does not flash light. */
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="page">
+
+  <div class="topbar">
+    <nav class="site-nav" aria-label="Site sections">
+      <a href="index.html">Home</a>
+      <a href="publications.html">Publications</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+    </nav>
+    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch to dark theme">
+      <svg class="to-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/>
+      </svg>
+      <svg class="to-light" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2"/>
+        <path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>
+      </svg>
+    </button>
+  </div>
+
+  <header class="intro">
+    <figure class="portrait">
+      <img src="assets/MeChillin.jpg" alt="Hong-Son Nguyen"
+           onerror="this.src='assets/portrait-placeholder.svg'; this.alt='Portrait placeholder';">
+    </figure>
+
+    <div class="intro-body">
+      <h1>Hong-Son Nguyen</h1>
+      <p class="affil">
+        Research Fellow, <a href="https://sites.google.com/site/yenchenliuncku/">Networked Robotic Systems Laboratory</a><br>
+        MSc candidate, Robotics and Control Systems &middot; Department of Mechanical Engineering<br>
+        National Cheng Kung University, Tainan, Taiwan
+      </p>
+
+      <ul class="links">
+        <li><a href="mailto:hongsonnguyen.haui@gmail.com">Email</a></li>
+        <li><a href="https://scholar.google.com/citations?user=FENrtWsAAAAJ&amp;hl=en">Google Scholar</a></li>
+        <li><a href="https://github.com/sontypo">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/hong-son-nguyen-751tps/">LinkedIn</a></li>
+        <li class="cv-menu">
+          <button type="button" id="cvButton" aria-expanded="false" aria-controls="cvChoices">CV</button>
+          <ul id="cvChoices" hidden>
+            <li><a href="assets/HongSon_Nguyen_CV_Academic.pdf">Academic CV<span>2 pages &middot; full publication list</span></a></li>
+            <li><a href="assets/HongSon_Nguyen_CV_Industry.pdf">Industry CV<span>2 pages &middot; engineering roles</span></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section>
+      <h2>Projects</h2>
+      <p class="note">
+        Videos from experiments and projects.
+      </p>
+
+      <ol class="projects">
+
+        <li>
+          <div class="project-video project-video--4x3">
+            <iframe src="https://www.youtube-nocookie.com/embed/WLNZRzARL0c"
+                    title="Final thesis: development of an autonomous hexapod robot using deep reinforcement learning"
+                    loading="lazy" allowfullscreen
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+          <div class="project-body">
+            <p class="title">Autonomous Hexapod Robot using Deep Reinforcement Learning</p>
+            <p class="venue">Undergraduate thesis, Hanoi University of Industry &middot; 2023 &middot; graded 94, selected as best thesis</p>
+            <p class="desc">
+              Deep reinforcement learning for the hexapod&rsquo;s locomotion and outdoor autonomy, from
+              training in simulation to deployment on the hardware, compared against a differential-drive
+              mobile base.
+            </p>
+            <p class="meta">
+              <a href="https://www.youtube.com/watch?v=WLNZRzARL0c">YouTube</a>
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <div class="project-video">
+            <iframe src="https://www.youtube-nocookie.com/embed/9U0_5Xm_B40"
+                    title="Hexapod robot exploring an outdoor environment"
+                    loading="lazy" allowfullscreen
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+          <div class="project-body">
+            <p class="title">18-DOF Hexapod Robot for Autonomous Operation Outdoors</p>
+            <p class="venue">Hanoi Intelligent Robotics Laboratory, Hanoi University of Industry &middot; 2023</p>
+            <p class="desc">
+              An 18-degree-of-freedom hexapod, with three joints in each of its six legs, built to walk
+              and explore on its own across uneven outdoor terrain.
+            </p>
+            <p class="meta">
+              <a href="https://www.youtube.com/watch?v=9U0_5Xm_B40">YouTube</a>
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <div class="project-video">
+            <iframe src="https://www.youtube-nocookie.com/embed/ZdCEzJvqX3U"
+                    title="Autonomous mobile robot adopting a DRL algorithm in an unknown environment"
+                    loading="lazy" allowfullscreen
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+          <div class="project-body">
+            <p class="title">Autonomous Mobile Robot with Deep Reinforcement Learning for Real-Time Obstacle Avoidance</p>
+            <p class="venue">Hanoi Intelligent Robotics Laboratory, Hanoi University of Industry &middot; 2023</p>
+            <p class="desc">
+              A mobile robot drives to its goal through an unknown environment, avoiding obstacles in
+              real time with a policy learned by deep reinforcement learning. The controller was
+              developed in Gazebo and then validated on the physical robot.
+            </p>
+            <p class="meta">
+              <a href="https://www.youtube.com/watch?v=ZdCEzJvqX3U">YouTube</a>
+            </p>
+          </div>
+        </li>
+
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Last updated November 2026.
+      Source at <a href="https://github.com/hsn-saun">github.com/hsn-saun</a>.
+    </p>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('themeToggle');
+
+    function setTheme(mode) {
+      if (mode === 'dark') root.setAttribute('data-theme', 'dark');
+      else root.removeAttribute('data-theme');
+      btn.setAttribute('aria-label',
+        mode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+      try { localStorage.setItem('theme', mode); } catch (e) {}
+    }
+
+    /* Sync the label with whatever the pre-paint script already applied. */
+    btn.setAttribute('aria-label',
+      root.getAttribute('data-theme') === 'dark'
+        ? 'Switch to light theme' : 'Switch to dark theme');
+
+    btn.addEventListener('click', function () {
+      setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+  })();
+
+  /* CV chooser. Without JavaScript the menu stays open, so both CVs remain reachable. */
+  (function () {
+    var button = document.getElementById('cvButton');
+    var menu = document.getElementById('cvChoices');
+
+    function open(isOpen) {
+      menu.hidden = !isOpen;
+      button.setAttribute('aria-expanded', String(isOpen));
+    }
+
+    open(false);
+
+    button.addEventListener('click', function (e) {
+      e.stopPropagation();
+      open(menu.hidden);
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!menu.hidden && !menu.contains(e.target)) open(false);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !menu.hidden) {
+        open(false);
+        button.focus();
+      }
+    });
+  })();
+
+  /* Project descriptions are trimmed so each entry is no taller than its video,
+     with a More/Less button for the rest. Without JavaScript the full text shows. */
+  (function () {
+    var MIN_LINES = 2;     /* never trim below this, even beside a short video */
+    var STACKED_LINES = 3; /* on narrow screens the video sits above the text */
+
+    var entries = [].map.call(document.querySelectorAll('.projects li'), function (li, i) {
+      var e = {
+        li: li,
+        video: li.querySelector('.project-video'),
+        body: li.querySelector('.project-body'),
+        desc: li.querySelector('.desc'),
+        button: document.createElement('button'),
+        open: false
+      };
+      e.desc.id = e.desc.id || 'project-desc-' + (i + 1);
+      e.button.type = 'button';
+      e.button.className = 'desc-toggle';
+      e.button.setAttribute('aria-controls', e.desc.id);
+      e.button.addEventListener('click', function () {
+        e.open = !e.open;
+        fit(e);
+      });
+      li.querySelector('.meta').appendChild(e.button);
+      return e;
+    });
+
+    function fit(e) {
+      var desc = e.desc;
+      desc.classList.remove('is-trimmed');
+      desc.style.webkitLineClamp = '';
+
+      var lineHeight = parseFloat(getComputedStyle(desc).lineHeight);
+      var fullHeight = desc.offsetHeight;
+      var sideBySide = getComputedStyle(e.li).gridTemplateColumns.split(' ').length > 1;
+      var lines = sideBySide
+        ? Math.floor((e.video.offsetHeight - (e.body.offsetHeight - fullHeight)) / lineHeight)
+        : STACKED_LINES;
+      lines = Math.max(lines, MIN_LINES);
+
+      var needsTrim = fullHeight > lines * lineHeight + 1;
+      e.button.hidden = !needsTrim;
+      e.button.textContent = e.open ? 'Less' : 'More';
+      e.button.setAttribute('aria-expanded', String(e.open));
+
+      if (needsTrim && !e.open) {
+        desc.classList.add('is-trimmed');
+        desc.style.webkitLineClamp = String(lines);
+      }
+    }
+
+    function fitAll() { entries.forEach(fit); }
+
+    var pending = false;
+    window.addEventListener('resize', function () {
+      if (pending) return;
+      pending = true;
+      requestAnimationFrame(function () { pending = false; fitAll(); });
+    });
+
+    fitAll();
+    /* Line heights change once web fonts finish loading. */
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitAll);
+  })();
+</script>
+
+
+</body>
+</html>

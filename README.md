@@ -6,6 +6,7 @@ no framework, no build step, and only a few lines of JavaScript.
 ```
 index.html          Home — bio, research interests, news
 publications.html   the publication list, with a figure beside each entry
+projects.html       project videos (YouTube embeds) with a short description each
 style.css           all styling; light and dark, plus a print stylesheet
 assets/             portrait and CV PDFs
 assets/figures/     method figures shown beside each publication
@@ -18,9 +19,9 @@ Education, experience and awards deliberately live in the CVs only, not on the s
 ### The header is duplicated
 
 With no build step and no templating, the top bar, the portrait/name block and the
-closing scripts exist verbatim in both pages. **Change one and change the other** — a
-nav link, a new contact link, or a change of affiliation has to be applied twice. The
-alternative would be a static site generator, which is not worth it for two pages.
+closing scripts exist verbatim in all three pages. **Change one and change the other** — a
+nav link, a new contact link, or a change of affiliation has to be applied three times. The
+alternative would be a static site generator, which is not worth it for three pages.
 
 ## Two files to add
 
@@ -65,6 +66,12 @@ Everything is plain HTML — edit `index.html` directly.
   figure and the entry runs full width instead — one of the seven has no thumbnail,
   the HaUI journal article, whose full text is not online. To make a new one, see
   [`tools/`](tools/README.md), which extracts a figure straight out of the paper PDF.
+- **Projects**: copy an existing `<li>` in the `.projects` list in `projects.html`. The
+  video is a YouTube embed inside `<div class="project-video">`, using the
+  `youtube-nocookie.com/embed/<id>` address; add `project-video--4x3` for a 4:3 video.
+  Keep the `YouTube` link in `.meta`, since videos are hidden when the page is printed.
+  Write the description at any length: a script at the end of `projects.html` trims it so
+  the entry is no taller than its video, and adds a **More** / **Less** button when it does.
 - **Colors and type**: the palette lives in the `:root` block at the top of `style.css`,
   with the dark overrides in `:root[data-theme="dark"]` right below it.
 
