@@ -70,6 +70,9 @@ Everything is plain HTML — edit `index.html` directly.
   video is a YouTube embed inside `<div class="project-video">`, using the
   `youtube-nocookie.com/embed/<id>` address; add `project-video--4x3` for a 4:3 video.
   Keep the `YouTube` link in `.meta`, since videos are hidden when the page is printed.
+  A video can also live in `assets/videos/` as an MP4 (H.264), played with a `<video>`
+  tag in the same box; give it a poster JPG so the box is not blank before it loads,
+  e.g. `ffmpeg -ss 3 -i clip.mp4 -frames:v 1 -vf scale=960:-2 clip.jpg`.
   Write the description at any length: a script at the end of `projects.html` trims it so
   the entry is no taller than its video, and adds a **More** / **Less** button when it does.
 - **Colors and type**: the palette lives in the `:root` block at the top of `style.css`,

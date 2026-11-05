@@ -89,6 +89,52 @@
       <ol class="projects">
 
         <li>
+          <div class="project-video">
+            <video controls muted playsinline preload="metadata"
+                   poster="assets/videos/social_barn_web.jpg"
+                   aria-label="Robot navigating crowds of 5 to 25 people in simulation, then among real pedestrians in a corridor, a crossing and a dense social scene">
+              <source src="assets/videos/social_barn_web.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="project-body">
+            <p class="title">Social Behavior-Aware Robot Navigation</p>
+            <p class="venue">Networked Robotic Systems Laboratory, National Cheng Kung University &middot; 2026</p>
+            <p class="desc">
+              A mobile robot that moves through a crowd by reasoning about the people around it: not as
+              obstacles to avoid, but as agents whose intentions, interactions and comfort shape what it
+              should do next, while it keeps a safe distance from every person around it. The navigation
+              policy is refined with human guidance. The video shows it first in simulation with crowds of
+              5 to 25 people, then on the physical robot among real pedestrians in a corridor, a crossing
+              and a dense social scene, with the onboard camera beside a 3D reconstruction of each run.
+            </p>
+            <p class="meta"></p>
+          </div>
+        </li>
+
+        <li>
+          <div class="project-video">
+            <video controls muted playsinline preload="metadata"
+                   poster="assets/videos/escooter_simulation.jpg"
+                   aria-label="Self-balancing e-scooter in Gazebo, then policy training in Isaac Sim">
+              <source src="assets/videos/escooter_simulation.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="project-body">
+            <p class="title">Self-Balancing Autonomous Electric Scooter</p>
+            <p class="venue">Networked Robotic Systems Laboratory, National Cheng Kung University &middot; 2024</p>
+            <p class="desc">
+              A simulated autonomous e-scooter that keeps itself upright. It steers with its handlebar,
+              drives through the front wheel, and balances with a reaction plate driven by a PD+ control
+              law on IMU roll feedback, holding within about a degree of upright. The same robot model
+              also trains a learned velocity-tracking policy across parallel environments in Isaac Lab.
+            </p>
+            <p class="meta">
+              <a href="https://github.com/sontypo/Autonomous_E-Scooter_Simulation/tree/ros2-humble">Code</a>
+            </p>
+          </div>
+        </li>
+
+        <li>
           <div class="project-video project-video--4x3">
             <iframe src="https://www.youtube-nocookie.com/embed/WLNZRzARL0c"
                     title="Final thesis: development of an autonomous hexapod robot using deep reinforcement learning"
@@ -159,8 +205,8 @@
 
   <footer>
     <p>
-      Last updated November 2026.
-      Source at <a href="https://github.com/hsn-saun">github.com/hsn-saun</a>.
+      Last updated September 2026.
+      Source at <a href="https://github.com/sontypo">github.com/sontypo</a>.
     </p>
   </footer>
 
