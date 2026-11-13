@@ -100,12 +100,12 @@
   \par\addvspace{8pt}%
   \noindent
   \begin{minipage}{\textwidth}
-    \bfseries\fontsize{10}{13}\selectfont #2\par
+    \bfseries\fontsize{10}{13}\selectfont #2%
+    \ifx\relax#4\relax\else\ \ \normalfont#4\fi\par
     \vspace{1pt}
     {\fontsize{9.6}{12}\selectfont\color{muted}#1}\par
     \vspace{0.5pt}
     {\itshape\fontsize{9.5}{12}\selectfont\color{muted}#3}%
-    \ifx\relax#4\relax\else\ \ #4\fi
   \end{minipage}%
   \par%
 }
